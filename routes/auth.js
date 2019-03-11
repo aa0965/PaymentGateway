@@ -1,5 +1,7 @@
 const passport = require('passport');
 
+var url = 'https://www.googleapis.com/plus/v1/people/me?access_token={access_token}';
+
 module.exports = app => {
   app.get(
     '/auth/google',
@@ -26,6 +28,7 @@ module.exports = app => {
 
   app.get('/api/current_user', (req, res) => {
     res.send(req.user);
+
 
   });
 };
